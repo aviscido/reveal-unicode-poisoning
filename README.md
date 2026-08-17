@@ -284,7 +284,7 @@ The package uses a distinct local identity:
 {
   "name": "reveal-unicode-poisoning-local",
   "displayName": "Reveal Unicode Poisoning (Local)",
-  "publisher": "obvelum-local"
+  "publisher": "aviscido"
 }
 ```
 
