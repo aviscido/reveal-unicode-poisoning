@@ -2,10 +2,18 @@
   "name": "reveal-unicode-poisoning-local",
   "displayName": "Reveal Unicode Poisoning (Local)",
   "description": "Local Layer A Unicode detector for invisible format characters, spaces, tags, bidi controls and selected confusables",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "aviscido",
   "license": "MIT",
   "icon": "icon/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aviscido/reveal-unicode-poisoning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aviscido/reveal-unicode-poisoning/issues"
+  },
+  "homepage": "https://github.com/aviscido/reveal-unicode-poisoning#readme",
   "engines": {
     "vscode": "^1.85.0"
   },

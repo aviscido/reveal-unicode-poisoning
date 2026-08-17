@@ -244,16 +244,29 @@ Package the compiled extension:
 npx vsce package --no-dependencies
 ```
 
+`vsce` warns if `package.json` has no `repository` field; the manifest declares
+`repository`, `bugs` and `homepage` pointing at
+[aviscido/reveal-unicode-poisoning](https://github.com/aviscido/reveal-unicode-poisoning),
+so packaging runs clean.
+
+The `.vscodeignore` file keeps sources, source maps, samples and editor
+configuration out of the package, so only the compiled extension, the manifest,
+the license, the README and the icon are shipped.
+
 This writes a local `.vsix` file in the repository root. Inspect it before installing:
 
 ```bash
 unzip -l ./*.vsix
 ```
 
-Expected package contents include:
+Expected package contents are exactly:
 
 ```text
+extension.vsixmanifest
+[Content_Types].xml
 extension/package.json
+extension/readme.md
+extension/LICENSE.txt
 extension/out/extension.js
 extension/out/scanner.js
 extension/out/decoder.js
