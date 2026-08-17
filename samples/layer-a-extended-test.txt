@@ -1,0 +1,18 @@
+This is a sample file. It should contain 17 Unicode findings:
+7 confusable, 1 private use, 2 space, 3 strip, 4 zwj family
+
+ASCII is clean.
+Zero-width space: alpha​beta
+Zero-width non-joiner: alpha‌beta
+Soft hyphen: co­operate
+Combining grapheme joiner: a͏b
+Word joiner: red⁠blue
+Invisible separator: alpha⁣beta
+BOM-like character: alpha﻿beta
+No-break space: hello world
+Thin space: hello world
+Private-use point: beforeafter
+Fullwidth Latin: ｈｅｌｌｏ
+Cyrillic confusable: раypal
+Emoji should remain clean: ❤️‍🔥
+Plain emoji should remain clean: 👨‍💻

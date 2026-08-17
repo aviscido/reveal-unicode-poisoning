@@ -1,0 +1,82 @@
+{
+  "name": "reveal-unicode-poisoning-local",
+  "displayName": "Reveal Unicode Poisoning (Local)",
+  "description": "Local Layer A Unicode detector for invisible format characters, spaces, tags, bidi controls and selected confusables",
+  "version": "0.1.0",
+  "publisher": "aviscido",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Linters"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "unicodePoisonDetector.scan",
+        "title": "Scan File for Layer A Unicode"
+      },
+      {
+        "command": "unicodePoisonDetector.reveal",
+        "title": "Reveal Hidden Payload"
+      },
+      {
+        "command": "unicodePoisonDetector.strip",
+        "title": "Strip All Suspicious Characters (Disabled)"
+      }
+    ],
+    "configuration": {
+      "title": "Unicode Layer A Detector",
+      "properties": {
+        "unicodePoisonDetector.scanOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan the active visible file when it is saved"
+        },
+        "unicodePoisonDetector.scanOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan a visible file when it becomes active"
+        },
+        "unicodePoisonDetector.severity": {
+          "type": "string",
+          "default": "error",
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
+          "description": "Diagnostic severity used for Unicode tag characters"
+        },
+        "unicodePoisonDetector.aggressive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Also flag the mapped Cyrillic and fullwidth Latin confusables from the original Layer A detector"
+        },
+        "unicodePoisonDetector.stripEmojiGlue": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also flag contextually valid emoji joiners/selectors and script glue. Keep disabled for ordinary documents."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^5.3.0"
+  }
+}
